@@ -22,6 +22,11 @@ Add the latest dependencies...
     <version>RELEASE</version>
 </dependency>
 <dependency>
+    <groupId>io.muserver</groupId>
+    <artifactId>mu-swagger</artifactId>
+    <version>RELEASE</version>
+</dependency>
+<dependency>
     <groupId>io.swagger.core.v3</groupId>
     <artifactId>swagger-jaxrs2-jakarta</artifactId>
     <version>RELEASE</version>
