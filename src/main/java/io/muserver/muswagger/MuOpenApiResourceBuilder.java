@@ -1,5 +1,6 @@
 package io.muserver.muswagger;
 
+import io.swagger.v3.jaxrs2.integration.JaxrsApplicationScanner;
 import io.swagger.v3.oas.integration.SwaggerConfiguration;
 import io.swagger.v3.oas.integration.api.OpenApiContext;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -114,6 +115,8 @@ public class MuOpenApiResourceBuilder {
             throw new IllegalStateException("No JAX-RS resources have been set for the OpenAPI resource");
         }
         var swaggerConfig = new SwaggerConfiguration();
+        // Discover only the supplied resources, without scanning the rest of the classpath.
+        swaggerConfig.setScannerClass(JaxrsApplicationScanner.class.getName());
         if (openApi != null) {
             swaggerConfig.setOpenAPI(openApi);
         }
